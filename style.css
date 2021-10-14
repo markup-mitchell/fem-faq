@@ -7,9 +7,12 @@
 
 	--black: var(--color__100);
 	--question--closed: var(--color__200);
+	--question--hover: var(--color__400);
 	--question--open: var(--color__100);
 	--question__line: var(--color__500);
 	--answer: var(--color__300);
+
+	font-size: 8px;
 	color: var(--black);
 }
 
@@ -18,6 +21,7 @@ html {
 }
 
 summary {
+	font-size: 1.75rem;
 	display: flex;
 	justify-content: space-between;
 	cursor: pointer;
@@ -27,22 +31,45 @@ summary {
 	color: var(--question--closed);
 }
 
-summary:hover,
-summary:focus-visible {
-	color: orange;
-	font-weight: 700;
-	font-variation-settings: 'wght' 700;
-	transition: all 0.3s ease-out;
+summary::before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	opacity: 0.2;
+	content: '';
 }
 
 details {
+	position: relative;
 	border-bottom: 1px var(--question__line) solid;
+	font-size: 1.5rem;
+	color: transparent;
+
+	padding: 2rem 0;
+	line-height: 2.25rem;
+}
+
+details[open] {
+	color: var(--answer);
+	transition: color 0.3s ease-out;
+	transition-delay: 0.2s;
+}
+
+summary:hover,
+summary:focus-visible {
+	color: var(--question--hover);
+	font-weight: 700;
+	font-variation-settings: 'wght' 700;
+	transition: all 0.3s ease-out;
 }
 
 details[open] summary {
 	font-weight: 700;
 	font-variation-settings: 'wght' 700;
 	color: var(--question--open);
+	margin-bottom: 1.5rem;
 }
 
 details summary:after {
