@@ -1,94 +1,145 @@
 :root {
-	--color__100: rgba(30, 31, 54, 1);
-	--color__200: rgba(75, 76, 95, 1);
-	--color__300: rgba(120, 120, 135, 1);
-	--color__400: rgba(244, 123, 86, 1);
-	--color__500: rgba(232, 232, 234, 1);
+  --color__100: rgba(30, 31, 54, 1);
+  --color__200: rgba(75, 76, 95, 1);
+  --color__300: rgba(120, 120, 135, 1);
+  --color__400: rgba(244, 123, 86, 1);
+  --color__500: rgba(232, 232, 234, 1);
 
-	--black: var(--color__100);
-	--question--closed: var(--color__200);
-	--question--hover: var(--color__400);
-	--question--open: var(--color__100);
-	--question__line: var(--color__500);
-	--answer: var(--color__300);
+  --gradient: linear-gradient(180deg, #b068e9 0%, #6463e7 100%);
 
-	font-size: 8px;
-	color: var(--black);
+  --black: var(--color__100);
+  --question--closed: var(--color__200);
+  --question--hover: var(--color__400);
+  --question--open: var(--color__100);
+  --question__line: var(--color__500);
+  --answer: var(--color__300);
+
+  font-size: 8px;
+  color: var(--black);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html {
-	font-family: 'Kumbh Sans', sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  background-image: var(--gradient);
+  min-height: 100vh;
+  padding: 18rem 4rem 10.5rem;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  font-variation-settings: 'wght' 800;
+  text-align: center;
+  margin-bottom: 4.5rem;
+}
+
+@media (min-width: 500px) {
+  h1 {
+    text-align: left;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 3rem;
+  width: 100%;
+}
+
+.image__wrapper {
+  /* outline: solid thin red; */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.image__main {
+  margin-top: -210px;
+}
+
+.card__content {
+  width: 100%;
+  padding: 6rem 3rem;
 }
 
 summary {
-	font-size: 1.75rem;
-	display: flex;
-	justify-content: space-between;
-	cursor: pointer;
-	font-weight: 500;
-	font-variation-settings: 'wght' 500;
-	transition: all 0.2s ease-in;
-	color: var(--question--closed);
+  font-size: 1.575rem;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 500;
+  font-variation-settings: 'wght' 500;
+  transition: all 0.2s ease-in;
+  color: var(--question--closed);
 }
 
 summary::before {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	opacity: 0.2;
-	content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.2;
+  content: '';
 }
 
 details {
-	position: relative;
-	border-bottom: 1px var(--question__line) solid;
-	font-size: 1.5rem;
-	color: transparent;
+  position: relative;
+  border-bottom: 1px var(--question__line) solid;
+  font-size: 1.5rem;
+  color: transparent;
 
-	padding: 2rem 0;
-	line-height: 2.25rem;
+  padding: 2rem 0;
+  line-height: 2.25rem;
 }
 
 details[open] {
-	color: var(--answer);
-	transition: color 0.3s ease-out;
-	transition-delay: 0.2s;
+  color: var(--answer);
+  transition: color 0.3s ease-out;
+  transition-delay: 0.2s;
 }
 
 summary:hover,
 summary:focus-visible {
-	color: var(--question--hover);
-	font-weight: 700;
-	font-variation-settings: 'wght' 700;
-	transition: all 0.3s ease-out;
+  color: var(--question--hover);
+  font-weight: 700;
+  font-variation-settings: 'wght' 700;
+  transition: all 0.3s ease-out;
 }
 
 details[open] summary {
-	font-weight: 700;
-	font-variation-settings: 'wght' 700;
-	color: var(--question--open);
-	margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-variation-settings: 'wght' 700;
+  color: var(--question--open);
+  margin-bottom: 1.5rem;
 }
 
 details summary:after {
-	content: url('./images/icon-arrow-down.svg');
-	transition: all 0.5s ease;
+  content: url('./images/icon-arrow-down.svg');
+  transition: all 0.5s ease;
 }
 
 details[open] summary:after {
-	content: url('./images/icon-arrow-down.svg');
-	transform: scaleY(-1);
-	transition: all 0.5s ease;
+  content: url('./images/icon-arrow-down.svg');
+  transform: scaleY(-1);
+  transition: all 0.5s ease;
 }
 
 details summary::-webkit-details-marker,
 details summary::marker {
-	display: none;
-	content: '';
-}
-
-main {
-	max-width: 375px;
+  display: none;
+  content: '';
 }
