@@ -1,77 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
 
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
 
-    <title>Frontend Mentor | FAQ Accordion Card</title>
+		<title>Frontend Mentor | FAQ Accordion Card</title>
 
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@500;900&display=swap"
-      rel="stylesheet"
-    />
-    <script type="module" src="./card.js"></script>
-  </head>
-  <body>
-    <main>
-      <div class="card">
-        <!-- the card image might be one tag, a collection (figure), might not be present at all, might have per-instance positional properties controlled by props. It needs a wrapper to separate it from its contents -->
-        <div class="card__image">
-          <div class="image__wrapper">
-            <img
-              class="image__shadow"
-              src="/images/bg-pattern-mobile.svg"
-              alt=""
-            />
-            <img
-              class="image__main"
-              src="./images/illustration-woman-online-mobile.svg"
-              alt="Cartoon woman considers a huge TV screen"
-            />
-          </div>
-        </div>
-
-        <div class="card__content">
-          <h1>FAQ</h1>
-          <details>
-            <summary>How many team members can I invite?</summary>
-            You can invite up to 2 additional users on the Free plan. There is
-            no limit on team members for the Premium plan.
-          </details>
-          <details>
-            <summary>What is the maximum file upload size?</summary>
-            No more than 2GB. All files in your account must fit your allotted
-            storage space.
-          </details>
-          <details>
-            <summary>How do I reset my password?</summary>
-            Click “Forgot password” from the login page or “Change password”
-            from your profile page.A reset link will be emailed to you.
-          </details>
-          <details>
-            <summary>Can I cancel my subscription?</summary>
-            Yes! Send us a message and we’ll process your request no questions
-            asked.
-          </details>
-          <details>
-            <summary>Do you provide additional support?</summary>
-            Chat and email support is available 24/7. Phone lines are open
-            during normal business hours.
-          </details>
-        </div>
-      </div>
-    </main>
-  </body>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@500;900&display=swap"
+			rel="stylesheet"
+		/>
+		<script type="module" src="./card.js"></script>
+	</head>
+	<body>
+		<div class="page-layout">
+			<main>
+				<div class="faq-slot">
+					<div class="card-layout">
+						<div class="card"></div>
+						<div class="card__content">
+							<h1>FAQ</h1>
+							<details>
+								<summary>How many team members can I invite?</summary>
+								You can invite up to 2 additional users on the Free plan. There
+								is no limit on team members for the Premium plan.
+							</details>
+							<details>
+								<summary>What is the maximum file upload size?</summary>
+								No more than 2GB. All files in your account must fit your
+								allotted storage space.
+							</details>
+							<details>
+								<summary>How do I reset my password?</summary>
+								Click “Forgot password” from the login page or “Change password”
+								from your profile page.A reset link will be emailed to you.
+							</details>
+							<details>
+								<summary>Can I cancel my subscription?</summary>
+								Yes! Send us a message and we’ll process your request no
+								questions asked.
+							</details>
+							<details>
+								<summary>Do you provide additional support?</summary>
+								Chat and email support is available 24/7. Phone lines are open
+								during normal business hours.
+							</details>
+						</div>
+						<picture class="illustration-shadow">
+							<source
+								media="(min-width:974px)"
+								srcset="./images/bg-shadow--desktop.svg"
+							/>
+							<img src="/images/bg-pattern-mobile.svg" alt="" />
+						</picture>
+						<picture class="illustration">
+							<source
+								media="(min-width: 974px)"
+								srcset="./images/illustration-woman-online-desktop.svg"
+							/>
+							<img
+								src="./images/illustration-woman-online-mobile.svg"
+								alt="Cartoon woman considers a huge TV screen"
+							/>
+						</picture>
+						<img class="box--desktop" src="./images/box--desktop.svg" alt="" />
+					</div>
+				</div>
+			</main>
+		</div>
+	</body>
 </html>
